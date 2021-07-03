@@ -7,7 +7,14 @@
       <th>Orbit Type</th>
       <th>Launch Date</th>
    </tr>
-      <tr id = "info" *ngFor = "let list of satellites">
+      <tr id = "info" *ngFor = "let list of satellites" >
+         <script>
+            let counter = 0;
+            if(counter % 2 === 0){
+               document.getElementById('info').style.background = "light blue";
+            }
+            counter++;
+         </script>
 	<td>{{list.name}}</td>
 	<td  [class.warning] = "list.shouldShowWarning()">{{list.type}}</td>	
 	<td>{{list.operational}}</td>
